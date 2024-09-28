@@ -153,7 +153,7 @@ function Content() {
               {showHamburgerMenu && (
                 <div
                   ref={menuRef}
-                  className={`absolute bg-white right-0 top-0 w-[24.5rem] md:w-[25rem] lg:w-[39rem] xl:w-[46.5rem] h-[52rem] md:h-[75rem] 2xl:h-[75rem] lg:h-[75rem] xl:h-[42.5rem]  rounded-xl text-black p-8 shadow-lg z-50 transition-all duration-500 ease-in-out transform ${
+                  className={`absolute bg-white right-0 top-0 w-[21rem] md:w-[25rem] lg:w-[39rem] xl:w-[46.5rem] h-[35rem] md:h-[35rem] lg:h-[30rem] xl:h-[42.5rem]  md:rounded-xl text-black p-8 shadow-lg z-50 transition-all duration-500 ease-in-out transform ${
                     showHamburgerMenu
                       ? "opacity-100 max-h-[100rem]"
                       : "opacity-0 max-h-0"
@@ -253,7 +253,7 @@ function Content() {
         </nav>
 
         {/* Content Below Navbar */}
-        <div className="absolute inset-x-0 md:top-[60px]  top-[30px] flex flex-col items-start left-0 lg:left-[16rem] xl:left-[46.5rem] 2xl:left-[69rem] mt-[10rem] md:mt-[20rem] 2xl:mt-[20rem] xl:mt-[8rem] justify-center md:justify-start text-left px-4">
+        <div className="absolute inset-x-0 md:top-[60px]  top-[30px] flex flex-col items-start left-0 lg:left-[16rem] xl:left-[46.5rem] 2xl:left-[33rem] mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[8rem] justify-center md:justify-start text-left px-4">
           <h1 className="xl:text-[5rem] text-[3rem] md:text-[4rem] md:font-serif">
             Find Your Stay
           </h1>
