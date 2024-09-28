@@ -253,7 +253,7 @@ function Content() {
         </nav>
 
         {/* Content Below Navbar */}
-        <div className="absolute inset-x-0 md:top-[40px]  top-[30px] flex flex-col items-start left-0 lg:left-[16rem] xl:left-[40rem] 2xl:left-[43rem]  mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[8rem] justify-center md:justify-start text-left px-4">
+        <div className="absolute inset-x-0 md:top-[40px] top-[30px] flex flex-col items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
           <h1 className="xl:text-[5rem] text-[3rem] md:text-[4rem] md:font-serif">
             Find Your Stay
           </h1>
