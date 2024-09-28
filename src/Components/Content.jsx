@@ -37,7 +37,7 @@ function Content() {
     <div className="relative text-white">
       {/* Background Image */}
       <div className="relative w-full h-screen">
-        <img className="object-cover w-full h-full" src={img} alt="nav" />
+        <img className="object-cover w-full h-[56rem]" src={img} alt="nav" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Custom Navbar */}
@@ -286,7 +286,7 @@ function Content() {
             className={`hidden md:block flex flex-col gap-1 md:text-sm text-xs font-serif`} >
             {/* Text with Underline Animation */}
             <span className="text-white">Opened in 2024</span>
-            <div className="flex gap-4">
+            <div className="flex gap-4 md:mt-1">
               <a
                 href="/"
                 className="text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
