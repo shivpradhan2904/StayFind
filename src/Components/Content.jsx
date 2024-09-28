@@ -163,20 +163,25 @@ function Content() {
                   }}
                 >
                   {/* Close Button */}
-                  <div className="flex justify-between mb-2">
-                  <div className="bg-black text-white text-lg rounded-sm w-5 h-5 flex justify-center items-center">S</div>
-                  <button
-                    className="absolute top-4 right-6 text-black font-bold text-3xl hover:text-gray-500"
-                    onClick={toggleHamburgerMenu}
-                  >
-                    &times;
-                  </button>
+                  <div className="flex justify-between items-center mb-2">
+                    {/* S Logo */}
+                    <div className="bg-black text-white text-lg rounded-sm w-5 h-5 flex justify-center items-center">
+                      S
+                    </div>
+
+                    {/* Close (X) Button */}
+                    <button
+                      className="text-black font-bold text-3xl hover:text-gray-500"
+                      onClick={toggleHamburgerMenu}
+                    >
+                      &times;
+                    </button>
                   </div>
 
                   {/* Menu Items */}
                   <div className="flex flex-col py-6 justify-between h-full ">
                     {/* Top Section */}
-                    <div className="space-y-4 text-2xl md:text-6xl font-bold">
+                    <div className="space-y-4 text-3xl md:text-6xl font-bold">
                       {["Explore", "Projects", "Disciplines"].map(
                         (item, index) => (
                           <div
@@ -197,8 +202,13 @@ function Content() {
                     <div className="flex flex-col">
                       {/* Left Column */}
                       <div className="space-y-4 flex gap-[5rem] xl:gap-[17rem] text-gray-400">
-                        <div className="text-lg mt-4 md:mt-[11.5px]">Properties</div>
-                        <a href="/" className="space-y-2  text-black font-serif pb-1">
+                        <div className="text-lg mt-4 md:mt-[11.5px]">
+                          Properties
+                        </div>
+                        <a
+                          href="/"
+                          className="space-y-2  text-black font-serif pb-1"
+                        >
                           {[
                             "View Properties",
                             "Property Types",
@@ -262,9 +272,7 @@ function Content() {
           </h1>
 
           <div className="flex gap-1 justify-center h-[4rem] items-center">
-            <button
-              className="bg-white mt-4 md:mt-0  hover:bg-black hover:border-[2px] flex justify-center mb-4 items-center gap-3 md:gap-2 hover:text-white px-5 py-2 md:py-1 duration-500  text-black text-sm  md:px-6 rounded-md  md:w-[11rem] shadow-lg transition   group"
-            >
+            <button className="bg-white mt-4 md:mt-0  hover:bg-black hover:border-[2px] flex justify-center mb-4 items-center gap-3 md:gap-2 hover:text-white px-5 py-2 md:py-1 duration-500  text-black text-sm  md:px-6 rounded-md  md:w-[11rem] shadow-lg transition   group">
               <div className="w-[15px] h-[10px]  bg-black flex justify-center rounded-xl items-center transition duration-100 group-hover:bg-white">
                 <div className="w-[10px] h-[5px] bg-white transition duration-100 rounded-xl group-hover:bg-black"></div>
               </div>
@@ -286,7 +294,8 @@ function Content() {
           </button>
 
           <div
-            className={`hidden md:block flex flex-col gap-1 md:text-sm text-xs font-serif`} >
+            className={`hidden md:block flex flex-col gap-1 md:text-sm text-xs font-serif`}
+          >
             {/* Text with Underline Animation */}
             <span className="text-white">Opened in 2024</span>
             <div className="flex gap-4 md:mt-1">
