@@ -36,8 +36,8 @@ function Content() {
   return (
     <div className="relative text-white">
       {/* Background Image */}
-      <div className="relative w-full max-h-screen">
-        <img className="object-cover w-full max-h-screen" src={img} alt="nav" />
+      <div className="relative w-full h-screen">
+        <img className="object-cover w-full h-full" src={img} alt="nav" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Custom Navbar */}
@@ -275,7 +275,7 @@ function Content() {
         </div>
 
         {/* Content Section with Hover Effects */}
-        <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
+        <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 md:bottom-[2%] bottom-[5%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
           {/* Button with Arrow and Text */}
           <button className="hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-lg  hover:shadow-md hover:shadow-white duration-300">
             <span className="mr-2">↓</span> {/* Down arrow symbol */}
