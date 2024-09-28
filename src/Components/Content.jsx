@@ -56,8 +56,10 @@ function Content() {
               {["Explore", "Projects", "Best in Area"].map((item, index) => (
                 <li
                   key={index}
-                  className="transition-opacity duration-1000 ease-in-out opacity-0 transform translate-x-[-20px] relative group"
-                  style={{ opacity: isLoaded ? 1 : 0 }}
+                  className={`transition-all duration-700 ease-in-out opacity-0 transform translate-x-[-20px] relative group ${
+                    isLoaded ? "opacity-100 translate-x-0" : ""
+                  }`}
+                  style={{ transitionDelay: `${index * 100}ms` }} // Add delay based on index
                 >
                   <a
                     href="/"
@@ -76,8 +78,10 @@ function Content() {
               {["Budget", "Location", "Property type"].map((item, index) => (
                 <li
                   key={index}
-                  className="transition-opacity duration-1000 ease-in-out opacity-0 transform translate-x-[-20px] relative group"
-                  style={{ opacity: isLoaded ? 1 : 0 }}
+                  className={`transition-all duration-700 ease-in-out opacity-0 transform translate-x-[-20px] relative group ${
+                    isLoaded ? "opacity-100 translate-x-0" : ""
+                  }`}
+                  style={{ transitionDelay: `${(index + 3) * 100}ms` }} // Add delay based on index
                 >
                   <a
                     href="/"
@@ -153,23 +157,17 @@ function Content() {
               {showHamburgerMenu && (
                 <div
                   ref={menuRef}
-                  className={`absolute bg-white right-0 top-0 w-screen sm:w[20rem] md:w-[25rem] lg:w-[39rem] xl:w-[46.5rem] h-[35rem] md:h-[35rem] lg:h-[30rem] xl:h-[42.5rem]  md:rounded-xl text-black p-8 shadow-lg z-50 transition-all duration-500 ease-in-out transform ${
+                  className={`absolute bg-white right-0 top-0 w-screen sm:w-[20rem] md:w-[25rem] lg:w-[39rem] xl:w-[46.5rem] h-[35rem] md:h-[35rem] lg:h-[30rem] xl:h-[42.5rem] md:rounded-xl text-black p-8 shadow-lg z-50 transition-transform duration-1000 ease-in-out transform ${
                     showHamburgerMenu
-                      ? "opacity-100 max-h-[100rem]"
-                      : "opacity-0 max-h-0"
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-full opacity-0"
                   }`}
-                  style={{
-                    transition: "max-height 0.5s ease, opacity 0.5s ease",
-                  }}
                 >
-                  {/* Close Button */}
+                  {/* Close Button and S Logo */}
                   <div className="flex justify-between items-center mb-2">
-                    {/* S Logo */}
                     <div className="bg-black text-white text-lg rounded-sm w-5 h-5 flex justify-center items-center">
                       S
                     </div>
-
-                    {/* Close (X) Button */}
                     <button
                       className="text-black font-bold text-3xl hover:text-gray-500"
                       onClick={toggleHamburgerMenu}
@@ -179,19 +177,21 @@ function Content() {
                   </div>
 
                   {/* Menu Items */}
-                  <div className="flex flex-col py-6 justify-between h-full ">
+                  <div className="flex flex-col py-6 justify-between h-full">
                     {/* Top Section */}
                     <div className="space-y-4 text-3xl md:text-6xl font-bold">
                       {["Explore", "Projects", "Disciplines"].map(
                         (item, index) => (
                           <div
                             key={index}
-                            className={`hover:text-gray-600 cursor-pointer transition-transform duration-500 transform ${
+                            className={`hover:text-gray-600 cursor-pointer transition-transform duration-700 transform ${
                               showHamburgerMenu
-                                ? "translate-y-0"
+                                ? "translate-x-0 opacity-100"
                                 : "translate-y-[-20px] opacity-0"
                             }`}
-                            style={{ animationDelay: `${index * 0.1}s` }}
+                            style={{
+                              transitionDelay: `${(index + 6) * 100}ms`,
+                            }} // Delay for each item
                           >
                             {item}
                           </div>
@@ -207,7 +207,7 @@ function Content() {
                         </div>
                         <a
                           href="/"
-                          className="space-y-2  text-black font-serif pb-1"
+                          className="space-y-2 text-black font-serif pb-1"
                         >
                           {[
                             "View Properties",
@@ -216,14 +216,14 @@ function Content() {
                           ].map((item, index) => (
                             <div
                               key={index}
-                              className={`hover:text-gray-600 cursor-pointer transition-transform duration-500 transform ${
+                              className={`hover:text-gray-600 cursor-pointer transition-transform duration-700 transform ${
                                 showHamburgerMenu
-                                  ? "translate-y-0"
+                                  ? "translate-x-0 opacity-100"
                                   : "translate-y-[-20px] opacity-0"
                               }`}
                               style={{
-                                animationDelay: `${index * 0.1 + 0.3}s`,
-                              }} // Add delay for bottom divs
+                                transitionDelay: `${(index + 9) * 100}ms`, // Delay for each item
+                              }}
                             >
                               {item}
                             </div>
@@ -243,14 +243,14 @@ function Content() {
                           ].map((item, index) => (
                             <div
                               key={index}
-                              className={`hover:text-gray-600 cursor-pointer transition-transform duration-500 transform ${
+                              className={`hover:text-gray-600 cursor-pointer transition-transform duration-700 transform ${
                                 showHamburgerMenu
-                                  ? "translate-y-0"
+                                  ? "translate-x-0 opacity-100"
                                   : "translate-y-[-20px] opacity-0"
                               }`}
                               style={{
-                                animationDelay: `${index * 0.1 + 0.6}s`,
-                              }} // Add delay for bottom divs
+                                transitionDelay: `${(index + 12) * 100}ms`, // Delay for each item
+                              }}
                             >
                               {item}
                             </div>
@@ -266,19 +266,34 @@ function Content() {
         </nav>
 
         {/* Content Below Navbar */}
-        <div className="absolute inset-x-0 md:top-[40px] top-[20px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[11rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
-          <h1 className="xl:text-[5rem] text-3xl sm:text-[3rem] md:text-[4rem] font-serif">
+        <div className="absolute inset-x-0 md:top-[40px] top-[20px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem] mt-[11rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
+          <h1
+            className={`xl:text-[5rem] text-3xl sm:text-[3rem] md:text-[4rem] font-serif 
+        opacity-0 transform translate-x-[-20px] transition duration-700 
+        ${isLoaded ? "opacity-100 translate-x-0" : ""}`}
+            style={{ transitionDelay: `0ms` }}
+          >
             Find Your Stay
           </h1>
 
           <div className="flex gap-1 justify-center h-[4rem] items-center">
-            <button className="bg-white mt-4 md:mt-0  hover:bg-black hover:border-[2px] flex justify-center mb-4 items-center gap-3 md:gap-2 hover:text-white px-5 py-2 md:py-1 duration-500  text-black text-sm  md:px-6 rounded-md  md:w-[11rem] shadow-lg transition   group">
-              <div className="w-[15px] h-[10px]  bg-black flex justify-center rounded-xl items-center transition duration-100 group-hover:bg-white">
+            <button
+              className={`bg-white mt-4 md:mt-0 hover:bg-black hover:border-[1px] flex justify-center mb-4 items-center gap-3 md:gap-2 hover:text-white px-5 py-2 md:py-1 duration-500 text-black text-sm md:px-6 rounded-md md:w-[11rem] shadow-lg transition group
+        opacity-0 transform translate-x-[-20px] transition ${
+          isLoaded ? "opacity-100 translate-x-0" : ""
+        }`}>
+              <div className="w-[15px] h-[10px] bg-black flex justify-center rounded-xl items-center transition duration-100 group-hover:bg-white">
                 <div className="w-[10px] h-[5px] bg-white transition duration-100 rounded-xl group-hover:bg-black"></div>
               </div>
               Explore Images
             </button>
-            <button className=" md:hidden flex items-center text-sm justify-center bg-transparent border-[1px] border-gray-100 text-white py-2 md:py-2 px-3  md:px-4 rounded-md shadow-lg hover:shadow-sm hover:shadow-white transition duration-600">
+            <button
+              className={`md:hidden flex items-center text-sm justify-center bg-transparent border-[1px] border-gray-100 text-white py-2 md:py-2 px-3 md:px-4 rounded-md shadow-lg hover:shadow-sm hover:shadow-white transition duration-600
+        opacity-0 transform translate-x-[-20px] transition duration-700 ${
+          isLoaded ? "opacity-100 translate-x-0" : ""
+        }`}
+              style={{ transitionDelay: `200ms` }}
+            >
               <span className="mr-2">↓</span> {/* Down arrow symbol */}
               English
             </button>
@@ -286,49 +301,80 @@ function Content() {
         </div>
 
         {/* Content Section with Hover Effects */}
-        <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
+        <div className="absolute inset-x-0 left-[-2.7rem] md:left-0 bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
           {/* Button with Arrow and Text */}
-          <button className="hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-lg  hover:shadow-md hover:shadow-white duration-300">
+          <button
+            className={`hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-md hover:shadow-md hover:shadow-white duration-300
+        opacity-0 transform translate-x-[-20px] transition  ${
+          isLoaded ? "opacity-100 translate-x-0" : ""
+        }`}
+          >
             <span className="mr-2">↓</span> {/* Down arrow symbol */}
             English
           </button>
 
           <div
-            className={`hidden md:block flex flex-col gap-1 md:text-sm text-xs font-serif`}
+            className={`hidden md:block flex flex-col gap-1 md:text-sm text-xs font-serif 
+        opacity-0 transform translate-x-[-20px] transition duration-700 ${
+          isLoaded ? "opacity-100 translate-x-0" : ""
+        }`}
+            style={{ transitionDelay: `400ms` }}
           >
             {/* Text with Underline Animation */}
             <span className="text-white">Opened in 2024</span>
             <div className="flex gap-4 md:mt-1">
               <a
                 href="/"
-                className="text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className={`text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100 
+            opacity-0 transform translate-x-[-20px] transition duration-700 ${
+              isLoaded ? "opacity-100 translate-x-0" : ""
+            }`}
+                style={{ transitionDelay: `500ms` }}
               >
-                Archetecture
+                Architecture
               </a>
               <a
                 href="/"
-                className="text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className={`text-white relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100 
+            opacity-0 transform translate-x-[-20px] transition duration-700 ${
+              isLoaded ? "opacity-100 translate-x-0" : ""
+            }`}
+                style={{ transitionDelay: `600ms` }}
               >
                 Interior Design
               </a>
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 md:text-sm text-xs font-serif">
-            <span className="text-white font-medium">Bhubaneswer, Odisha</span>
-            <div className=" md:hidden flex flex-col font-serif">
+          <div
+            className={`flex flex-col gap-2 md:text-sm text-xs font-serif 
+        opacity-0 transform translate-x-[-20px] transition duration-700 ${
+          isLoaded ? "opacity-100 translate-x-0" : ""
+        }`}
+            style={{ transitionDelay: `700ms` }}
+          >
+            <span className="text-white font-medium">Bhubaneswar, Odisha</span>
+            <div className="md:hidden flex flex-col font-serif">
               {/* Text with Underline Animation */}
               <span className="text-white font-medium ">Opened in 2024</span>
               <div className="flex gap-4">
                 <a
                   href="/"
-                  className="text-white font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className={`text-white font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100 
+              opacity-0 transform translate-x-[-20px] transition duration-700 ${
+                isLoaded ? "opacity-100 translate-x-0" : ""
+              }`}
+                  style={{ transitionDelay: `800ms` }}
                 >
-                  Archetecture
+                  Architecture
                 </a>
                 <a
                   href="/"
-                  className="text-white font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  className={`text-white font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bg-white after:bottom-0 after:left-0 after:transition-transform after:duration-300 hover:after:scale-x-100 
+              opacity-0 transform translate-x-[-20px] transition duration-700 ${
+                isLoaded ? "opacity-100 translate-x-0" : ""
+              }`}
+                  style={{ transitionDelay: `900ms` }}
                 >
                   Interior Design
                 </a>
