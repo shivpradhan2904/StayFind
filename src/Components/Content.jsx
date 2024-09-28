@@ -41,7 +41,7 @@ function Content() {
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Custom Navbar */}
-        <nav className="absolute top-0 left-0 right-0 p-5 flex justify-between text-white bg-opacity-50">
+        <nav className="absolute top-0 left-0 right-0 p-1 sm:p-5 flex justify-between text-white bg-opacity-50">
           {/* Logo */}
           <div
             className=" font-forte text-3xl md:text-4xl transition-opacity duration-1000 ease-in-out opacity-0 transform scale-95"
@@ -50,7 +50,7 @@ function Content() {
             StayFinder
           </div>
 
-          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[40rem] flex justify-between">
+          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[45rem] flex justify-between">
             {/* First UL with Links */}
             <ul className="hidden md:block text-lg font-high-tower">
               {["Explore", "Projects", "Best in Area"].map((item, index) => (
