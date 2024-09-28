@@ -44,13 +44,13 @@ function Content() {
         <nav className="absolute top-0 left-0 right-0 p-5 flex justify-between text-white bg-opacity-50">
           {/* Logo */}
           <div
-            className=" font-forte text-4xl transition-opacity duration-1000 ease-in-out opacity-0 transform scale-95"
+            className=" font-forte text-3xl md:text-4xl transition-opacity duration-1000 ease-in-out opacity-0 transform scale-95"
             style={{ opacity: isLoaded ? 1 : 0 }}
           >
             StayFinder
           </div>
 
-          <div className="md:w-[30rem] lg:w-[44rem] 2xl:w-[67rem] flex justify-between">
+          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[57rem] flex justify-between">
             {/* First UL with Links */}
             <ul className="hidden md:block text-lg font-high-tower">
               {["Explore", "Projects", "Best in Area"].map((item, index) => (
