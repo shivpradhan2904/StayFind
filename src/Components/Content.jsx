@@ -37,7 +37,7 @@ function Content() {
     <div className="relative text-white">
       {/* Background Image */}
       <div className="relative w-full h-screen">
-        <img className="object-cover w-full h-screen" src={img} alt="nav" />
+        <img className="object-cover w-full h-full" src={img} alt="nav" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Custom Navbar */}
@@ -260,14 +260,14 @@ function Content() {
 
           <div className="flex gap-2 justify-center h-[4rem] items-center">
             <button
-              className="bg-white mt-4 md:mt-0 hover:bg-black flex justify-center mb-4 items-center gap-1 md:gap-2 hover:text-white  md:py-1 duration-500 py-1 text-black text-sm  md:px-6 rounded-lg w-[9rem] md:w-[11rem] shadow-lg transition  md:mt-4 group"
+              className="bg-white mt-4 md:mt-0 hover:bg-black hover:border-[2px] flex justify-center mb-4 items-center gap-1 md:gap-2 hover:text-white  md:py-1 duration-500 py-1 text-black text-sm  md:px-6 rounded-lg w-[9rem] md:w-[11rem] shadow-lg transition   group"
             >
-              <div className="w-[15px] h-[10px]  bg-black flex justify-center rounded-xl items-center transition duration-500 group-hover:bg-white">
-                <div className="w-[10px] h-[5px] bg-white transition duration-500 rounded-xl group-hover:bg-black"></div>
+              <div className="w-[15px] h-[10px]  bg-black flex justify-center rounded-xl items-center transition duration-100 group-hover:bg-white">
+                <div className="w-[10px] h-[5px] bg-white transition duration-100 rounded-xl group-hover:bg-black"></div>
               </div>
               Explore Images
             </button>
-            <button className=" md:hidden flex items-center text-sm justify-center bg-transparent border-2 border-gray-100 text-white py-1 md:py-2 px-2 md:px-4 rounded-lg shadow-lg hover:border-[#6bf6b3] transition duration-600">
+            <button className=" md:hidden flex items-center text-sm justify-center bg-transparent border-2 border-gray-100 text-white py-1 md:py-2 px-2 md:px-4 rounded-lg shadow-lg hover:shadow-sm hover:shadow-white transition duration-600">
               <span className="mr-2">↓</span> {/* Down arrow symbol */}
               English
             </button>
@@ -277,13 +277,13 @@ function Content() {
         {/* Content Section with Hover Effects */}
         <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
           {/* Button with Arrow and Text */}
-          <button className="hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-lg hover:border-[#216645a0] hover:shadow-lg">
+          <button className="hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-lg  hover:shadow-md hover:shadow-white duration-300">
             <span className="mr-2">↓</span> {/* Down arrow symbol */}
             English
           </button>
 
           <div
-            className={`hidden md:block flex flex-col gap-1 font-serif`} >
+            className={`hidden md:block flex flex-col gap-1 md:text-sm text-xs font-serif`} >
             {/* Text with Underline Animation */}
             <span className="text-white">Opened in 2024</span>
             <div className="flex gap-4">
@@ -302,7 +302,7 @@ function Content() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 font-serif">
+          <div className="flex flex-col gap-2 md:text-sm text-xs font-serif">
             <span className="text-white font-medium">Bhubaneswer, Odisha</span>
             <div className=" md:hidden flex flex-col font-serif">
               {/* Text with Underline Animation */}
