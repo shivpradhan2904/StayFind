@@ -266,7 +266,7 @@ function Content() {
         </nav>
 
         {/* Content Below Navbar */}
-        <div className="absolute inset-x-0 md:top-[40px] top-[20px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem] mt-[11rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
+        <div className="absolute inset-x-0 md:top-[40px] top-[20px] flex flex-col md:gap-8 items-start left-[1rem] lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem] mt-[11rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
           <h1
             className={`xl:text-[5rem] text-3xl sm:text-[3rem] md:text-[4rem] font-serif 
         opacity-0 transform translate-x-[-20px] transition duration-700 
@@ -347,7 +347,7 @@ function Content() {
           </div>
 
           <div
-            className={`flex flex-col gap-2 md:text-sm text-xs font-serif 
+            className={`flex flex-col gap-2 pl-2 md:text-sm text-xs font-serif 
         opacity-0 transform translate-x-[-20px] transition duration-700 ${
           isLoaded ? "opacity-100 translate-x-0" : ""
         }`}
