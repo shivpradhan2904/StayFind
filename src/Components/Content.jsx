@@ -153,7 +153,7 @@ function Content() {
               {showHamburgerMenu && (
                 <div
                   ref={menuRef}
-                  className={`absolute bg-white right-0 top-0 w-[21rem] md:w-[25rem] lg:w-[39rem] xl:w-[46.5rem] h-[35rem] md:h-[35rem] lg:h-[30rem] xl:h-[42.5rem]  md:rounded-xl text-black p-8 shadow-lg z-50 transition-all duration-500 ease-in-out transform ${
+                  className={`absolute bg-white right-0 top-0 w-screen sm:w[20rem] md:w-[25rem] lg:w-[39rem] xl:w-[46.5rem] h-[35rem] md:h-[35rem] lg:h-[30rem] xl:h-[42.5rem]  md:rounded-xl text-black p-8 shadow-lg z-50 transition-all duration-500 ease-in-out transform ${
                     showHamburgerMenu
                       ? "opacity-100 max-h-[100rem]"
                       : "opacity-0 max-h-0"
@@ -172,8 +172,12 @@ function Content() {
 
                   {/* Menu Items */}
                   <div className="flex flex-col justify-between h-full ">
+                    <div className="flex justify-center mt-5">
+                  <button className="text-white bg-[#1e7b80] rounded-xl px-8  ">Login / Signup</button>
+                    </div>
+
                     {/* Top Section */}
-                    <div className="space-y-6 text-6xl font-bold">
+                    <div className="space-y-4 text-2xl md:text-6xl font-bold">
                       {["Explore", "Projects", "Disciplines"].map(
                         (item, index) => (
                           <div
@@ -194,8 +198,8 @@ function Content() {
                     <div className="flex flex-col">
                       {/* Left Column */}
                       <div className="space-y-4 flex gap-[5rem] xl:gap-[17rem] text-gray-400">
-                        <div className="text-lg">Properties</div>
-                        <div className="space-y-2 text-black font-serif pb-1">
+                        <div className="text-lg mt-4 md:mt-[11.5px]">Properties</div>
+                        <a href="/" className="space-y-2  text-black font-serif pb-1">
                           {[
                             "View Properties",
                             "Property Types",
@@ -215,13 +219,13 @@ function Content() {
                               {item}
                             </div>
                           ))}
-                        </div>
+                        </a>
                       </div>
 
                       {/* Right Column */}
-                      <div className="space-y-4 flex gap-[7rem] xl:gap-[17rem] text-gray-400">
-                        <div className="text-lg">Owner</div>
-                        <div className="space-y-2 text-black font-serif">
+                      <div className="space-y-4 flex gap-[7rem] xl:gap-[18.8rem] text-gray-400">
+                        <div className="text-lg mt-4 md:mt-[11.5px]">Owner</div>
+                        <a href="/" className="space-y-2 text-black font-serif">
                           {[
                             "Owner List",
                             "Owned Properties",
@@ -242,7 +246,7 @@ function Content() {
                               {item}
                             </div>
                           ))}
-                        </div>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -275,7 +279,7 @@ function Content() {
         </div>
 
         {/* Content Section with Hover Effects */}
-        <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 md:bottom-[2%] bottom-[5%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
+        <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
           {/* Button with Arrow and Text */}
           <button className="hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-lg  hover:shadow-md hover:shadow-white duration-300">
             <span className="mr-2">↓</span> {/* Down arrow symbol */}
