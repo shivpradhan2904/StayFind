@@ -163,19 +163,18 @@ function Content() {
                   }}
                 >
                   {/* Close Button */}
+                  <div className="flex justify-between mb-2">
+                  <div className="bg-black text-white text-lg rounded-sm w-5 h-5 flex justify-center items-center">S</div>
                   <button
                     className="absolute top-4 right-6 text-black font-bold text-3xl hover:text-gray-500"
                     onClick={toggleHamburgerMenu}
                   >
                     &times;
                   </button>
+                  </div>
 
                   {/* Menu Items */}
-                  <div className="flex flex-col justify-between h-full ">
-                    <div className="flex justify-center mt-5">
-                  <button className="text-white bg-[#1e7b80] rounded-xl px-8  ">Login / Signup</button>
-                    </div>
-
+                  <div className="flex flex-col py-6 justify-between h-full ">
                     {/* Top Section */}
                     <div className="space-y-4 text-2xl md:text-6xl font-bold">
                       {["Explore", "Projects", "Disciplines"].map(
@@ -257,21 +256,21 @@ function Content() {
         </nav>
 
         {/* Content Below Navbar */}
-        <div className="absolute inset-x-0 md:top-[40px] top-[30px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
+        <div className="absolute inset-x-0 md:top-[40px] top-[20px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[11rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
           <h1 className="xl:text-[5rem] text-3xl sm:text-[3rem] md:text-[4rem] font-serif">
             Find Your Stay
           </h1>
 
-          <div className="flex gap-2 justify-center h-[4rem] items-center">
+          <div className="flex gap-1 justify-center h-[4rem] items-center">
             <button
-              className="bg-white mt-4 md:mt-0 hover:bg-black hover:border-[2px] flex justify-center mb-4 items-center gap-1 md:gap-2 hover:text-white  md:py-1 duration-500 py-1 text-black text-sm  md:px-6 rounded-lg w-[9rem] md:w-[11rem] shadow-lg transition   group"
+              className="bg-white mt-4 md:mt-0  hover:bg-black hover:border-[2px] flex justify-center mb-4 items-center gap-3 md:gap-2 hover:text-white px-5 py-2 md:py-1 duration-500  text-black text-sm  md:px-6 rounded-md  md:w-[11rem] shadow-lg transition   group"
             >
               <div className="w-[15px] h-[10px]  bg-black flex justify-center rounded-xl items-center transition duration-100 group-hover:bg-white">
                 <div className="w-[10px] h-[5px] bg-white transition duration-100 rounded-xl group-hover:bg-black"></div>
               </div>
               Explore Images
             </button>
-            <button className=" md:hidden flex items-center text-sm justify-center bg-transparent border-2 border-gray-100 text-white py-1 md:py-2 px-2 md:px-4 rounded-lg shadow-lg hover:shadow-sm hover:shadow-white transition duration-600">
+            <button className=" md:hidden flex items-center text-sm justify-center bg-transparent border-[1px] border-gray-100 text-white py-2 md:py-2 px-3  md:px-4 rounded-md shadow-lg hover:shadow-sm hover:shadow-white transition duration-600">
               <span className="mr-2">↓</span> {/* Down arrow symbol */}
               English
             </button>
