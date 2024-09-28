@@ -36,8 +36,8 @@ function Content() {
   return (
     <div className="relative text-white">
       {/* Background Image */}
-      <div className="relative w-full h-screen">
-        <img className="object-cover w-full h-[56rem]" src={img} alt="nav" />
+      <div className="relative w-full max-h-screen">
+        <img className="object-cover w-full max-h-screen" src={img} alt="nav" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Custom Navbar */}
