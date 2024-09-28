@@ -50,7 +50,7 @@ function Content() {
             StayFinder
           </div>
 
-          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[37rem] flex justify-between">
+          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[40rem] flex justify-between">
             {/* First UL with Links */}
             <ul className="hidden md:block text-lg font-high-tower">
               {["Explore", "Projects", "Best in Area"].map((item, index) => (
@@ -254,7 +254,7 @@ function Content() {
 
         {/* Content Below Navbar */}
         <div className="absolute inset-x-0 md:top-[40px] top-[30px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
-          <h1 className="xl:text-[5rem] text-2xl sm:text-[3rem] md:text-[4rem] font-serif">
+          <h1 className="xl:text-[5rem] text-3xl sm:text-[3rem] md:text-[4rem] font-serif">
             Find Your Stay
           </h1>
 
