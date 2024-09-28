@@ -37,7 +37,7 @@ function Content() {
     <div className="relative text-white">
       {/* Background Image */}
       <div className="relative w-full h-screen">
-        <img className="object-cover w-full h-full" src={img} alt="nav" />
+        <img className="object-cover w-full h-screen" src={img} alt="nav" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Custom Navbar */}
@@ -50,7 +50,7 @@ function Content() {
             StayFinder
           </div>
 
-          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[47rem] flex justify-between">
+          <div className="md:w-[27rem] lg:w-[44rem] 2xl:w-[37rem] flex justify-between">
             {/* First UL with Links */}
             <ul className="hidden md:block text-lg font-high-tower">
               {["Explore", "Projects", "Best in Area"].map((item, index) => (
@@ -253,8 +253,8 @@ function Content() {
         </nav>
 
         {/* Content Below Navbar */}
-        <div className="absolute inset-x-0 md:top-[40px] top-[30px] flex flex-col gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
-          <h1 className="xl:text-[5rem] text-2xl sm:text-[3rem] md:text-[4rem] md:font-serif">
+        <div className="absolute inset-x-0 md:top-[40px] top-[30px] flex flex-col md:gap-8 items-start left-0 lg:left-[16rem] xl:left-[45rem] 2xl:left-[43rem]  mt-[10rem] md:mt-[15rem] 2xl:mt-[10rem] xl:mt-[13rem] justify-center md:justify-start text-left px-4">
+          <h1 className="xl:text-[5rem] text-2xl sm:text-[3rem] md:text-[4rem] font-serif">
             Find Your Stay
           </h1>
 
@@ -276,7 +276,7 @@ function Content() {
         </div>
 
         {/* Content Section with Hover Effects */}
-        <div className="absolute inset-x-0 bottom-0 left-[-2.7rem] md:left-0 md:bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
+        <div className="absolute inset-x-0  left-[-2.7rem] md:left-0 bottom-[2%] flex items-center justify-between px-[1rem] sm:px-[2rem] md:px-[3rem] lg:px-[4rem] space-x-8">
           {/* Button with Arrow and Text */}
           <button className="hidden md:block flex items-center hover:border-[2px] font-serif bg-transparent border-2 border-gray-100 text-white py-2 px-4 rounded-lg shadow-lg hover:border-[#216645a0] z">
             <span className="mr-2">↓</span> {/* Down arrow symbol */}
@@ -284,10 +284,7 @@ function Content() {
           </button>
 
           <div
-            className={`hidden md:block flex flex-col gap-1 font-serif ${
-              showHamburgerMenu ? "hidden" : "block"
-            }`}
-          >
+            className={`hidden md:block flex flex-col gap-1 font-serif`} >
             {/* Text with Underline Animation */}
             <span className="text-white">Opened in 2024</span>
             <div className="flex gap-4">
